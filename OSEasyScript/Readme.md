@@ -4,8 +4,7 @@
 - $ cp script.sh {Nachos/code}
 - $ cd {Nachos/code}
 - $ sh script.sh {target}
-
-### Ex : sh script.sh HW2
+- Ex : sh script.sh HW2
 
 # Note :
 
