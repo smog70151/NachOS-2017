@@ -1,0 +1,451 @@
+Script started on Thu 28 Sep 2017 01:37:04 PM CST
+]0;2017osteam27@lsalab:~/NachOS_TY/code[?1034h[2017osteam27@lsalab code]$ cd build.linux/
+]0;2017osteam27@lsalab:~/NachOS_TY/code/build.linux[2017osteam27@lsalab build.linux]$ make clean
+/bin/rm -f bitmap.o debug.o libtest.o sysdep.o interrupt.o stats.o timer.o console.o machine.o mipssim.o translate.o network.o disk.o alarm.o kernel.o main.o scheduler.o synch.o thread.o addrspace.o exception.o synchconsole.o directory.o filehdr.o filesys.o pbitmap.o openfile.o synchdisk.o post.o switch.o
+]0;2017osteam27@lsalab:~/NachOS_TY/code/build.linux[2017osteam27@lsalab build.linux]$ make
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../lib/bitmap.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../lib/debug.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../lib/libtest.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../lib/sysdep.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../machine/interrupt.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../machine/interrupt.cc:29: warning: deprecated conversion from string constant to ‘char*’
+../machine/interrupt.cc:29: warning: deprecated conversion from string constant to ‘char*’
+../machine/interrupt.cc:32: warning: deprecated conversion from string constant to ‘char*’
+../machine/interrupt.cc:32: warning: deprecated conversion from string constant to ‘char*’
+../machine/interrupt.cc:32: warning: deprecated conversion from string constant to ‘char*’
+../machine/interrupt.cc:32: warning: deprecated conversion from string constant to ‘char*’
+../machine/interrupt.cc:32: warning: deprecated conversion from string constant to ‘char*’
+../machine/interrupt.cc:32: warning: deprecated conversion from string constant to ‘char*’
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../machine/stats.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../machine/timer.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../machine/console.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../machine/machine.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../machine/machine.cc:19: warning: deprecated conversion from string constant to ‘char*’
+../machine/machine.cc:19: warning: deprecated conversion from string constant to ‘char*’
+../machine/machine.cc:19: warning: deprecated conversion from string constant to ‘char*’
+../machine/machine.cc:19: warning: deprecated conversion from string constant to ‘char*’
+../machine/machine.cc:19: warning: deprecated conversion from string constant to ‘char*’
+../machine/machine.cc:19: warning: deprecated conversion from string constant to ‘char*’
+../machine/machine.cc:19: warning: deprecated conversion from string constant to ‘char*’
+../machine/machine.cc:19: warning: deprecated conversion from string constant to ‘char*’
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../machine/mipssim.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+In file included from ../machine/mipssim.cc:22:
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.cc: In member function ‘void Machine::OneInstruction(Instruction*)’:
+../machine/mipssim.cc:139: warning: array subscript has type ‘char’
+../machine/mipssim.cc:158: warning: array subscript has type ‘char’
+../machine/mipssim.cc:158: warning: array subscript has type ‘char’
+../machine/mipssim.cc:159: warning: array subscript has type ‘char’
+../machine/mipssim.cc:159: warning: array subscript has type ‘char’
+../machine/mipssim.cc:160: warning: array subscript has type ‘char’
+../machine/mipssim.cc:164: warning: array subscript has type ‘char’
+../machine/mipssim.cc:168: warning: array subscript has type ‘char’
+../machine/mipssim.cc:169: warning: array subscript has type ‘char’
+../machine/mipssim.cc:174: warning: array subscript has type ‘char’
+../machine/mipssim.cc:178: warning: array subscript has type ‘char’
+../machine/mipssim.cc:178: warning: array subscript has type ‘char’
+../machine/mipssim.cc:182: warning: array subscript has type ‘char’
+../machine/mipssim.cc:182: warning: array subscript has type ‘char’
+../machine/mipssim.cc:182: warning: array subscript has type ‘char’
+../machine/mipssim.cc:186: warning: array subscript has type ‘char’
+../machine/mipssim.cc:186: warning: array subscript has type ‘char’
+../machine/mipssim.cc:186: warning: array subscript has type ‘char’
+../machine/mipssim.cc:190: warning: array subscript has type ‘char’
+../machine/mipssim.cc:190: warning: array subscript has type ‘char’
+../machine/mipssim.cc:194: warning: array subscript has type ‘char’
+../machine/mipssim.cc:194: warning: array subscript has type ‘char’
+../machine/mipssim.cc:201: warning: array subscript has type ‘char’
+../machine/mipssim.cc:206: warning: array subscript has type ‘char’
+../machine/mipssim.cc:211: warning: array subscript has type ‘char’
+../machine/mipssim.cc:218: warning: array subscript has type ‘char’
+../machine/mipssim.cc:223: warning: array subscript has type ‘char’
+../machine/mipssim.cc:223: warning: array subscript has type ‘char’
+../machine/mipssim.cc:228: warning: array subscript has type ‘char’
+../machine/mipssim.cc:232: warning: array subscript has type ‘char’
+../machine/mipssim.cc:232: warning: array subscript has type ‘char’
+../machine/mipssim.cc:233: warning: array subscript has type ‘char’
+../machine/mipssim.cc:233: warning: array subscript has type ‘char’
+../machine/mipssim.cc:238: warning: array subscript has type ‘char’
+../machine/mipssim.cc:239: warning: array subscript has type ‘char’
+../machine/mipssim.cc:258: warning: array subscript has type ‘char’
+../machine/mipssim.cc:260: warning: array subscript has type ‘char’
+../machine/mipssim.cc:265: warning: array subscript has type ‘char’
+../machine/mipssim.cc:279: warning: array subscript has type ‘char’
+../machine/mipssim.cc:297: warning: array subscript has type ‘char’
+../machine/mipssim.cc:301: warning: array subscript has type ‘char’
+../machine/mipssim.cc:313: warning: array subscript has type ‘char’
+../machine/mipssim.cc:341: warning: array subscript has type ‘char’
+../machine/mipssim.cc:365: warning: array subscript has type ‘char’
+../machine/mipssim.cc:393: warning: array subscript has type ‘char’
+../machine/mipssim.cc:421: warning: array subscript has type ‘char’
+../machine/mipssim.cc:425: warning: array subscript has type ‘char’
+../machine/mipssim.cc:429: warning: array subscript has type ‘char’
+../machine/mipssim.cc:433: warning: array subscript has type ‘char’
+../machine/mipssim.cc:437: warning: array subscript has type ‘char’
+../machine/mipssim.cc:437: warning: array subscript has type ‘char’
+../machine/mipssim.cc:442: warning: array subscript has type ‘char’
+../machine/mipssim.cc:442: warning: array subscript has type ‘char’
+../machine/mipssim.cc:447: warning: array subscript has type ‘char’
+../machine/mipssim.cc:447: warning: array subscript has type ‘char’
+../machine/mipssim.cc:447: warning: array subscript has type ‘char’
+../machine/mipssim.cc:451: warning: array subscript has type ‘char’
+../machine/mipssim.cc:451: warning: array subscript has type ‘char’
+../machine/mipssim.cc:451: warning: array subscript has type ‘char’
+../machine/mipssim.cc:455: warning: array subscript has type ‘char’
+../machine/mipssim.cc:455: warning: array subscript has type ‘char’
+../machine/mipssim.cc:460: warning: array subscript has type ‘char’
+../machine/mipssim.cc:460: warning: array subscript has type ‘char’
+../machine/mipssim.cc:466: warning: array subscript has type ‘char’
+../machine/mipssim.cc:466: warning: array subscript has type ‘char’
+../machine/mipssim.cc:471: warning: array subscript has type ‘char’
+../machine/mipssim.cc:471: warning: array subscript has type ‘char’
+../machine/mipssim.cc:475: warning: array subscript has type ‘char’
+../machine/mipssim.cc:475: warning: array subscript has type ‘char’
+../machine/mipssim.cc:476: warning: array subscript has type ‘char’
+../machine/mipssim.cc:480: warning: array subscript has type ‘char’
+../machine/mipssim.cc:480: warning: array subscript has type ‘char’
+../machine/mipssim.cc:481: warning: array subscript has type ‘char’
+../machine/mipssim.cc:483: warning: array subscript has type ‘char’
+../machine/mipssim.cc:487: warning: array subscript has type ‘char’
+../machine/mipssim.cc:488: warning: array subscript has type ‘char’
+../machine/mipssim.cc:490: warning: array subscript has type ‘char’
+../machine/mipssim.cc:494: warning: array subscript has type ‘char’
+../machine/mipssim.cc:497: warning: array subscript has type ‘char’
+../machine/mipssim.cc:499: warning: array subscript has type ‘char’
+../machine/mipssim.cc:503: warning: array subscript has type ‘char’
+../machine/mipssim.cc:504: warning: array subscript has type ‘char’
+../machine/mipssim.cc:506: warning: array subscript has type ‘char’
+../machine/mipssim.cc:508: warning: array subscript has type ‘char’
+../machine/mipssim.cc:512: warning: array subscript has type ‘char’
+../machine/mipssim.cc:512: warning: array subscript has type ‘char’
+../machine/mipssim.cc:516: warning: array subscript has type ‘char’
+../machine/mipssim.cc:516: warning: array subscript has type ‘char’
+../machine/mipssim.cc:517: warning: array subscript has type ‘char’
+../machine/mipssim.cc:521: warning: array subscript has type ‘char’
+../machine/mipssim.cc:523: warning: array subscript has type ‘char’
+../machine/mipssim.cc:527: warning: array subscript has type ‘char’
+../machine/mipssim.cc:528: warning: array subscript has type ‘char’
+../machine/mipssim.cc:529: warning: array subscript has type ‘char’
+../machine/mipssim.cc:533: warning: array subscript has type ‘char’
+../machine/mipssim.cc:533: warning: array subscript has type ‘char’
+../machine/mipssim.cc:534: warning: array subscript has type ‘char’
+../machine/mipssim.cc:534: warning: array subscript has type ‘char’
+../machine/mipssim.cc:535: warning: array subscript has type ‘char’
+../machine/mipssim.cc:539: warning: array subscript has type ‘char’
+../machine/mipssim.cc:543: warning: array subscript has type ‘char’
+../machine/mipssim.cc:543: warning: array subscript has type ‘char’
+../machine/mipssim.cc:543: warning: array subscript has type ‘char’
+../machine/mipssim.cc:548: warning: array subscript has type ‘char’
+../machine/mipssim.cc:548: warning: array subscript has type ‘char’
+../machine/mipssim.cc:553: warning: array subscript has type ‘char’
+../machine/mipssim.cc:585: warning: array subscript has type ‘char’
+../machine/mipssim.cc:588: warning: array subscript has type ‘char’
+../machine/mipssim.cc:592: warning: array subscript has type ‘char’
+../machine/mipssim.cc:596: warning: array subscript has type ‘char’
+../machine/mipssim.cc:612: warning: array subscript has type ‘char’
+../machine/mipssim.cc:644: warning: array subscript has type ‘char’
+../machine/mipssim.cc:647: warning: array subscript has type ‘char’
+../machine/mipssim.cc:650: warning: array subscript has type ‘char’
+../machine/mipssim.cc:653: warning: array subscript has type ‘char’
+../machine/mipssim.cc:675: warning: array subscript has type ‘char’
+../machine/mipssim.cc:675: warning: array subscript has type ‘char’
+../machine/mipssim.cc:675: warning: array subscript has type ‘char’
+../machine/mipssim.cc:679: warning: array subscript has type ‘char’
+../machine/mipssim.cc:679: warning: array subscript has type ‘char’
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../machine/translate.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../machine/translate.cc: In member function ‘ExceptionType Machine::Translate(int, int*, int, bool)’:
+../machine/translate.cc:239: warning: comparison between signed and unsigned integer expressions
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../machine/network.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../machine/disk.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../threads/alarm.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../threads/kernel.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../threads/kernel.cc: In member function ‘void Kernel::Initialize()’:
+../threads/kernel.cc:98: warning: deprecated conversion from string constant to ‘char*’
+../threads/kernel.cc: In member function ‘void Kernel::ThreadSelfTest()’:
+../threads/kernel.cc:157: warning: deprecated conversion from string constant to ‘char*’
+../threads/kernel.cc: In member function ‘void Kernel::NetworkTest()’:
+../threads/kernel.cc:213: warning: deprecated conversion from string constant to ‘char*’
+../threads/kernel.cc:214: warning: deprecated conversion from string constant to ‘char*’
+../threads/kernel.cc: In member function ‘void Kernel::ExecAll()’:
+../threads/kernel.cc:264: warning: unused variable ‘a’
+In file included from ../threads/synchlist.h:49,
+                 from ../threads/kernel.cc:14:
+../threads/synchlist.cc: In constructor ‘SynchList<T>::SynchList() [with T = int]’:
+../threads/kernel.cc:163:   instantiated from here
+../threads/synchlist.cc:26: warning: deprecated conversion from string constant to ‘char*’
+../threads/synchlist.cc:27: warning: deprecated conversion from string constant to ‘char*’
+../threads/synchlist.cc: In member function ‘void SynchList<T>::SelfTest(T) [with T = int]’:
+../threads/kernel.cc:164:   instantiated from here
+../threads/synchlist.cc:120: warning: deprecated conversion from string constant to ‘char*’
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../threads/main.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+In file included from ../threads/main.cc:41:
+../lib/copyright.h:23: warning: deprecated conversion from string constant to ‘char*’
+../threads/main.cc: In function ‘int main(int, char**)’:
+../threads/main.cc:170: warning: deprecated conversion from string constant to ‘char*’
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../threads/scheduler.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../threads/synch.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../threads/synch.cc: In member function ‘void Semaphore::SelfTest()’:
+../threads/synch.cc:138: warning: deprecated conversion from string constant to ‘char*’
+../threads/synch.cc:141: warning: deprecated conversion from string constant to ‘char*’
+../threads/synch.cc: In constructor ‘Lock::Lock(char*)’:
+../threads/synch.cc:161: warning: deprecated conversion from string constant to ‘char*’
+../threads/synch.cc: In member function ‘void Condition::Wait(Lock*)’:
+../threads/synch.cc:250: warning: deprecated conversion from string constant to ‘char*’
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../threads/thread.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../threads/thread.cc: In member function ‘void Thread::SelfTest()’:
+../threads/thread.cc:430: warning: deprecated conversion from string constant to ‘char*’
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../userprog/addrspace.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../userprog/addrspace.cc: In member function ‘bool AddrSpace::Load(char*)’:
+../userprog/addrspace.cc:138: warning: comparison between signed and unsigned integer expressions
+../userprog/addrspace.cc: In member function ‘ExceptionType AddrSpace::Translate(unsigned int, unsigned int*, int)’:
+../userprog/addrspace.cc:306: warning: comparison between signed and unsigned integer expressions
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../userprog/exception.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../userprog/exception.cc: In function ‘void ExceptionHandler(ExceptionType)’:
+../userprog/exception.cc:55: warning: unused variable ‘val’
+../userprog/exception.cc:56: warning: unused variable ‘exit’
+../userprog/exception.cc:56: warning: unused variable ‘threadID’
+../userprog/exception.cc:56: warning: unused variable ‘programID’
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../userprog/synchconsole.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../userprog/synchconsole.cc: In constructor ‘SynchConsoleInput::SynchConsoleInput(char*)’:
+../userprog/synchconsole.cc:23: warning: deprecated conversion from string constant to ‘char*’
+../userprog/synchconsole.cc:24: warning: deprecated conversion from string constant to ‘char*’
+../userprog/synchconsole.cc: In constructor ‘SynchConsoleOutput::SynchConsoleOutput(char*)’:
+../userprog/synchconsole.cc:79: warning: deprecated conversion from string constant to ‘char*’
+../userprog/synchconsole.cc:80: warning: deprecated conversion from string constant to ‘char*’
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../filesys/directory.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../filesys/filehdr.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../filesys/filesys.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../filesys/pbitmap.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../filesys/openfile.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../filesys/synchdisk.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../filesys/synchdisk.cc: In constructor ‘SynchDisk::SynchDisk()’:
+../filesys/synchdisk.cc:30: warning: deprecated conversion from string constant to ‘char*’
+../filesys/synchdisk.cc:31: warning: deprecated conversion from string constant to ‘char*’
+g++ -g -Wall -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -DFILESYS_STUB -DRDATA -DSIM_FIX -Dx86 -DLINUX -DCHANGED -m32 -c ../network/post.cc
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../network/post.cc: In constructor ‘PostOfficeInput::PostOfficeInput(int)’:
+../network/post.cc:155: warning: deprecated conversion from string constant to ‘char*’
+../network/post.cc:162: warning: deprecated conversion from string constant to ‘char*’
+../network/post.cc: In constructor ‘PostOfficeOutput::PostOfficeOutput(double)’:
+../network/post.cc:268: warning: deprecated conversion from string constant to ‘char*’
+../network/post.cc:269: warning: deprecated conversion from string constant to ‘char*’
+In file included from ../threads/synchlist.h:49,
+                 from ../network/post.h:34,
+                 from ../network/post.cc:20:
+../threads/synchlist.cc: In constructor ‘SynchList<T>::SynchList() [with T = Mail*]’:
+../network/post.cc:52:   instantiated from here
+../threads/synchlist.cc:26: warning: deprecated conversion from string constant to ‘char*’
+../threads/synchlist.cc:27: warning: deprecated conversion from string constant to ‘char*’
+g++ -m32 -P -I../network -I../filesys -I../userprog -I../threads -I../machine -I../lib -I- -Dx86 -DLINUX -c ../threads/switch.S
+cc1: note: obsolete option -I- used, please use -iquote instead
+g++ bitmap.o debug.o libtest.o sysdep.o interrupt.o stats.o timer.o console.o machine.o mipssim.o translate.o network.o disk.o alarm.o kernel.o main.o scheduler.o synch.o thread.o addrspace.o exception.o synchconsole.o directory.o filehdr.o filesys.o pbitmap.o openfile.o synchdisk.o post.o switch.o -m32 -o nachos
+]0;2017osteam27@lsalab:~/NachOS_TY/code/build.linux[2017osteam27@lsalab build.linux]$ cd ../test
+]0;2017osteam27@lsalab:~/NachOS_TY/code/test[2017osteam27@lsalab test]$ ls
+a                     fileIO_test1       [0m[38;5;34mhw2.coff[0m
+add                   fileIO_test1.c     hw2.o
+add.c                 [38;5;34mfileIO_test1.coff[0m  Makefile
+[38;5;34madd.coff[0m              fileIO_test1.o     Makefile.dep
+add.o                 fileIO_test2       matmult.c
+consoleIO_test1       fileIO_test2.c     script
+consoleIO_test1.c     [38;5;34mfileIO_test2.coff[0m  segments.c
+[38;5;34mconsoleIO_test1.coff[0m  fileIO_test2.o     shell.c
+consoleIO_test1.o     halt               sort
+consoleIO_test2       halt.c             sort.c
+consoleIO_test2.c     [38;5;34mhalt.coff[0m          start.o
+[38;5;34mconsoleIO_test2.coff[0m  halt.o             start.S
+consoleIO_test2.o     hw2
+DISK_0                hw2.c
+[m]0;2017osteam27@lsalab:~/NachOS_TY/code/test[2017osteam27@lsalab test]$ make clean
+rm -f -f *.o *.ii
+rm -f -f *.coff
+]0;2017osteam27@lsalab:~/NachOS_TY/code/test[2017osteam27@lsalab test]$ make
+../../usr/local/nachos/bin/decstation-ultrix-gcc -G 0 -c -I../userprog -I../lib -B/usr/bin/local/nachos/lib/gcc-lib/decstation-ultrix/2.95.2/ -B/usr/bin/local/nachos/decstation-ultrix/bin/ -c add.c
+../../usr/local/nachos/bin/decstation-ultrix-gcc -G 0 -c -I../userprog -I../lib -B/usr/bin/local/nachos/lib/gcc-lib/decstation-ultrix/2.95.2/ -B/usr/bin/local/nachos/decstation-ultrix/bin/ -mips2 -c start.S
+../../usr/local/nachos/bin/decstation-ultrix-ld -T script -N start.o add.o -o add.coff
+../../coff2noff/coff2noff.x86Linux add.coff add
+numsections 3 
+Loading 3 sections:
+	".text", filepos 0xd0, mempos 0x0, size 0x1a0
+	".data", filepos 0x270, mempos 0x1a0, size 0x0
+	".bss", filepos 0x0, mempos 0x1a0, size 0x0
+../../usr/local/nachos/bin/decstation-ultrix-gcc -G 0 -c -I../userprog -I../lib -B/usr/bin/local/nachos/lib/gcc-lib/decstation-ultrix/2.95.2/ -B/usr/bin/local/nachos/decstation-ultrix/bin/ -c halt.c
+../../usr/local/nachos/bin/decstation-ultrix-ld -T script -N start.o halt.o -o halt.coff
+../../coff2noff/coff2noff.x86Linux halt.coff halt
+numsections 3 
+Loading 3 sections:
+	".text", filepos 0xd0, mempos 0x0, size 0x180
+	".data", filepos 0x250, mempos 0x180, size 0x0
+	".bss", filepos 0x0, mempos 0x180, size 0x0
+../../usr/local/nachos/bin/decstation-ultrix-gcc -G 0 -c -I../userprog -I../lib -B/usr/bin/local/nachos/lib/gcc-lib/decstation-ultrix/2.95.2/ -B/usr/bin/local/nachos/decstation-ultrix/bin/ -c consoleIO_test1.c
+../../usr/local/nachos/bin/decstation-ultrix-ld -T script -N start.o consoleIO_test1.o -o consoleIO_test1.coff
+../../coff2noff/coff2noff.x86Linux consoleIO_test1.coff consoleIO_test1
+numsections 3 
+Loading 3 sections:
+	".text", filepos 0xd0, mempos 0x0, size 0x1d0
+	".data", filepos 0x2a0, mempos 0x1d0, size 0x0
+	".bss", filepos 0x0, mempos 0x1d0, size 0x0
+../../usr/local/nachos/bin/decstation-ultrix-gcc -G 0 -c -I../userprog -I../lib -B/usr/bin/local/nachos/lib/gcc-lib/decstation-ultrix/2.95.2/ -B/usr/bin/local/nachos/decstation-ultrix/bin/ -c consoleIO_test2.c
+../../usr/local/nachos/bin/decstation-ultrix-ld -T script -N start.o consoleIO_test2.o -o consoleIO_test2.coff
+../../coff2noff/coff2noff.x86Linux consoleIO_test2.coff consoleIO_test2
+numsections 3 
+Loading 3 sections:
+	".text", filepos 0xd0, mempos 0x0, size 0x1d0
+	".data", filepos 0x2a0, mempos 0x1d0, size 0x0
+	".bss", filepos 0x0, mempos 0x1d0, size 0x0
+../../usr/local/nachos/bin/decstation-ultrix-gcc -G 0 -c -I../userprog -I../lib -B/usr/bin/local/nachos/lib/gcc-lib/decstation-ultrix/2.95.2/ -B/usr/bin/local/nachos/decstation-ultrix/bin/ -c fileIO_test1.c
+../../usr/local/nachos/bin/decstation-ultrix-ld -T script -N start.o fileIO_test1.o -o fileIO_test1.coff
+../../coff2noff/coff2noff.x86Linux fileIO_test1.coff fileIO_test1
+numsections 4 
+Loading 4 sections:
+	".text", filepos 0xf0, mempos 0x0, size 0x310
+	".rdata", filepos 0x400, mempos 0x310, size 0x90
+	".data", filepos 0x490, mempos 0x3a0, size 0x0
+	".bss", filepos 0x0, mempos 0x3a0, size 0x0
+../../usr/local/nachos/bin/decstation-ultrix-gcc -G 0 -c -I../userprog -I../lib -B/usr/bin/local/nachos/lib/gcc-lib/decstation-ultrix/2.95.2/ -B/usr/bin/local/nachos/decstation-ultrix/bin/ -c fileIO_test2.c
+../../usr/local/nachos/bin/decstation-ultrix-ld -T script -N start.o fileIO_test2.o -o fileIO_test2.coff
+../../coff2noff/coff2noff.x86Linux fileIO_test2.coff fileIO_test2
+numsections 4 
+Loading 4 sections:
+	".text", filepos 0xf0, mempos 0x0, size 0x320
+	".rdata", filepos 0x410, mempos 0x320, size 0xa0
+	".data", filepos 0x4b0, mempos 0x3c0, size 0x0
+	".bss", filepos 0x0, mempos 0x3c0, size 0x0
+../../usr/local/nachos/bin/decstation-ultrix-gcc -G 0 -c -I../userprog -I../lib -B/usr/bin/local/nachos/lib/gcc-lib/decstation-ultrix/2.95.2/ -B/usr/bin/local/nachos/decstation-ultrix/bin/ -c hw2.c
+../../usr/local/nachos/bin/decstation-ultrix-ld -T script -N start.o hw2.o -o hw2.coff
+../../coff2noff/coff2noff.x86Linux hw2.coff hw2
+numsections 4 
+Loading 4 sections:
+	".text", filepos 0xf0, mempos 0x0, size 0x1a0
+	".rdata", filepos 0x290, mempos 0x1a0, size 0x10
+	".data", filepos 0x2a0, mempos 0x1b0, size 0x0
+	".bss", filepos 0x0, mempos 0x1b0, size 0x0
+]0;2017osteam27@lsalab:~/NachOS_TY/code/test[2017osteam27@lsalab test]$ ../build.linux/nachos -d u -e g[Khw2
+hw2
+Received Exception 1 type: 8
+
+Executing Write Function ...
+Buffer Pointer Value : 0x885f610
+
+The number of bytes : 12
+
+Received Exception 1 type: 0
+
+Shutdown, initiated by user program.
+
+Machine halting!
+
+This is halt
+Ticks: total 61, idle 0, system 40, user 21
+Disk I/O: reads 0, writes 0
+Console I/O: reads 0, writes 0
+Paging: faults 0
+Network I/O: packets received 0, sent 0
+]0;2017osteam27@lsalab:~/NachOS_TY/code/test[2017osteam27@lsalab test]$ exit
+
+Script done on Thu 28 Sep 2017 01:38:03 PM CST
