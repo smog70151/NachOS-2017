@@ -1,0 +1,259 @@
+// exception.cc
+//  Entry point into the Nachos kernel from user programs.
+//  There are two kinds of things that can cause control to
+//  transfer back to here from user code:
+//
+//  syscall -- The user code explicitly requests to call a procedure
+//  in the Nachos kernel.  Right now, the only function we support is
+//  "Halt".
+//
+//  exceptions -- The user code does something that the CPU can't handle.
+//  For instance, accessing memory that doesn't exist, arithmetic errors,
+//  etc.
+//
+//  Interrupts (which can also cause control to transfer from user
+//  code into the Nachos kernel) are handled elsewhere.
+//
+// For now, this only handles the Halt() system call.
+// Everything else core dumps.
+//
+// Copyright (c) 1992-1996 The Regents of the University of California.
+// All rights reserved.  See copyright.h for copyright notice and limitation
+// of liability and disclaimer of warranty provisions.
+
+#include "copyright.h"
+#include "main.h"
+#include "syscall.h"
+#include "ksyscall.h"
+//----------------------------------------------------------------------
+// ExceptionHandler
+//  Entry point into the Nachos kernel.  Called when a user program
+//  is executing, and either does a syscall, or generates an addressing
+//  or arithmetic exception.
+//
+//  For system calls, the following is the calling convention:
+//
+//  system call code -- r2
+//      arg1 -- r4
+//      arg2 -- r5
+//      arg3 -- r6
+//      arg4 -- r7
+//
+//  The result of the system call, if any, must be put back into r2.
+//
+// If you are handling a system call, don't forget to increment the pc
+// before returning. (Or else you'll loop making the same system call forever!)
+//
+//  "which" is the kind of exception.  The list of possible exceptions
+//  is in machine.h.
+//----------------------------------------------------------------------
+
+void
+ExceptionHandler(ExceptionType which)
+{
+    int type = kernel->machine->ReadRegister(2);
+    int val;
+
+
+    int status, exit, threadID, programID;
+
+    DEBUG(dbgSys, "Received Exception " << which << " type: " << type << "\n");
+    switch (which) {
+    case SyscallException:
+        switch(type) {
+        case SC_Halt:
+            DEBUG(dbgSys, "Shutdown, initiated by user program.\n");
+            SysHalt();
+                        cout<<"in exception\n";
+            ASSERTNOTREACHED();
+            break;
+
+        /* Chi-Yuan's Project 1 Added by TY */
+
+        case SC_PrintInt:
+            DEBUG(dbgSys, "Print Interger ...\n");
+            SysPrintInt((int)kernel->machine->ReadRegister(4));
+            {
+            kernel->machine->WriteRegister(PrevPCReg, kernel->machine->ReadRegister(PCReg));
+            kernel->machine->WriteRegister(PCReg, kernel->machine->ReadRegister(PCReg) + 4);
+            kernel->machine->WriteRegister(NextPCReg, kernel->machine->ReadRegister(PCReg)+4);
+            }
+            return;
+            ASSERTNOTREACHED();
+            break;
+
+        case SC_Open:
+            DEBUG(dbgSys, "Open File ...\n");
+            int addr, fileID;
+            char* fileName;
+            addr = kernel->machine->ReadRegister(4);
+            fileName = &(kernel->machine->mainMemory[addr]);
+            fileID = SysOpen(fileName);
+            // Return the FileID
+            kernel->machine->WriteRegister(2, (OpenFileID) fileID);
+            {
+            kernel->machine->WriteRegister(PrevPCReg, kernel->machine->ReadRegister(PCReg));
+            kernel->machine->WriteRegister(PCReg, kernel->machine->ReadRegister(PCReg) + 4);
+            kernel->machine->WriteRegister(NextPCReg, kernel->machine->ReadRegister(PCReg)+4);
+
+            }
+            return;
+            ASSERTNOTREACHED();
+            break;
+
+        case SC_Close:
+            DEBUG(dbgSys, "Closing File ...\n");
+            int Check;
+            fileID = kernel->machine->ReadRegister(4);
+            Check = SysClose((OpenFileID)fileID);
+            // Return the FileID
+            kernel->machine->WriteRegister(2, Check);
+            {
+            kernel->machine->WriteRegister(PrevPCReg, kernel->machine->ReadRegister(PCReg));
+            kernel->machine->WriteRegister(PCReg, kernel->machine->ReadRegister(PCReg) + 4);
+            kernel->machine->WriteRegister(NextPCReg, kernel->machine->ReadRegister(PCReg)+4);
+            }
+            return;
+            ASSERTNOTREACHED();
+            break;
+
+        case SC_Write:
+            DEBUG(dbgSys, "Writing Data from file...\n");
+            int val, size, temp;
+            char* buffer;
+            unsigned int bufferLen;
+            val = kernel->machine->ReadRegister(4);
+            size = kernel->machine->ReadRegister(5);
+            fileID = kernel->machine->ReadRegister(6);
+            buffer = &(kernel->machine->mainMemory[val]);
+            bufferLen = strlen(buffer);
+            temp = SysWrite(buffer, size, (OpenFileID)fileID);
+            // Return the number of characters actually write to the file ...
+            kernel->machine->WriteRegister(2, (int) temp);
+            {
+            kernel->machine->WriteRegister(PrevPCReg, kernel->machine->ReadRegister(PCReg));
+            kernel->machine->WriteRegister(PCReg, kernel->machine->ReadRegister(PCReg) + 4);
+            kernel->machine->WriteRegister(NextPCReg, kernel->machine->ReadRegister(PCReg)+4);
+            }
+            return;
+            ASSERTNOTREACHED();
+            break;
+
+
+        case SC_Read:
+            DEBUG(dbgSys, "Reading Data from file ...\n");
+            val = kernel->machine->ReadRegister(4);
+            size = kernel->machine->ReadRegister(5);
+            fileID = kernel->machine->ReadRegister(6);
+            buffer = &(kernel->machine->mainMemory[val]);
+            bufferLen = strlen(buffer);
+            temp = SysRead(buffer, size, (OpenFileID)fileID);
+            // Return the number of characters actually write to the file ...
+            kernel->machine->WriteRegister(2, (int) temp);
+            {
+            kernel->machine->WriteRegister(PrevPCReg, kernel->machine->ReadRegister(PCReg));
+            kernel->machine->WriteRegister(PCReg, kernel->machine->ReadRegister(PCReg) + 4);
+            kernel->machine->WriteRegister(NextPCReg, kernel->machine->ReadRegister(PCReg)+4);
+            }
+            return;
+            ASSERTNOTREACHED();
+            break;
+
+        /* Chi-Yuan's Project 1 Added by TY */
+
+        /* Bai's HW 2 Added by TY*/
+        /*
+        case SC_Write:
+            DEBUG(dbgSys, "Executing Write Function ...");
+            int val, size;
+            char* buffer;
+            unsigned int bufferLen;
+            val = kernel->machine->ReadRegister(4);
+            size = kernel->machine->ReadRegister(5);
+            fileID = kernel->machine->ReadRegister(6);
+            buffer = &(kernel->machine->mainMemory[val]);
+            bufferLen = strlen(buffer);
+            // Get the pointer value
+            DEBUG(dbgSys, "Buffer Pointer Value : " << &buffer << endl);
+            // Get the number of the char array
+            DEBUG(dbgSys, "The number of bytes : " << bufferLen << endl);
+            // Return the Buffer length
+            kernel->machine->WriteRegister(2, (int) bufferLen);
+            {
+            kernel->machine->WriteRegister(PrevPCReg, kernel->machine->ReadRegister(PCReg));
+            kernel->machine->WriteRegister(PCReg, kernel->machine->ReadRegister(PCReg) + 4);
+            kernel->machine->WriteRegister(NextPCReg, kernel->machine->ReadRegister(PCReg)+4);
+            }
+            return ;
+            ASSERTNOTREACHED();
+            break;
+        */
+        /* Bai's HW 2 Added by TY*/
+
+        case SC_MSG:
+            DEBUG(dbgSys, "Message received.\n");
+            val = kernel->machine->ReadRegister(4);
+            {
+            char *msg = &(kernel->machine->mainMemory[val]);
+            cout << msg << endl;
+            }
+            SysHalt();
+            ASSERTNOTREACHED();
+            break;
+        case SC_Create:
+            val = kernel->machine->ReadRegister(4);
+            {
+
+            char *filename = &(kernel->machine->mainMemory[val]);
+            //cout << filename << endl;
+            status = SysCreate(filename);
+
+            kernel->machine->WriteRegister(2, (int) status);
+            }
+            kernel->machine->WriteRegister(PrevPCReg, kernel->machine->ReadRegister(PCReg));
+            kernel->machine->WriteRegister(PCReg, kernel->machine->ReadRegister(PCReg) + 4);
+            kernel->machine->WriteRegister(NextPCReg, kernel->machine->ReadRegister(PCReg)+4);
+            return;
+            ASSERTNOTREACHED();
+            break;
+        case SC_Add:
+            DEBUG(dbgSys, "Add " << kernel->machine->ReadRegister(4) << " + " << kernel->machine->ReadRegister(5) << "\n");
+            /* Process SysAdd Systemcall*/
+            int result;
+            result = SysAdd(/* int op1 */(int)kernel->machine->ReadRegister(4),
+            /* int op2 */(int)kernel->machine->ReadRegister(5));
+            DEBUG(dbgSys, "Add returning with " << result << "\n");
+            /* Prepare Result */
+            kernel->machine->WriteRegister(2, (int)result);
+            /* Modify return point */
+            {
+            /* set previous programm counter (debugging only)*/
+            kernel->machine->WriteRegister(PrevPCReg, kernel->machine->ReadRegister(PCReg));
+
+            /* set programm counter to next instruction (all Instructions are 4 byte wide)*/
+            kernel->machine->WriteRegister(PCReg, kernel->machine->ReadRegister(PCReg) + 4);
+
+            /* set next programm counter for brach execution */
+            kernel->machine->WriteRegister(NextPCReg, kernel->machine->ReadRegister(PCReg)+4);
+            }
+            cout << "result is " << result << "\n";
+            return;
+            ASSERTNOTREACHED();
+            break;
+        case SC_Exit:
+            DEBUG(dbgAddr, "Program exit\n");
+            val=kernel->machine->ReadRegister(4);
+            cout << "return value:" << val << endl;
+            kernel->currentThread->Finish();
+            break;
+        default:
+            cerr << "Unexpected system call " << type << "\n";
+            break;
+        }
+        break;
+    default:
+        cerr << "Unexpected user mode exception " << (int)which << "\n";
+        break;
+    }
+    ASSERTNOTREACHED();
+}
