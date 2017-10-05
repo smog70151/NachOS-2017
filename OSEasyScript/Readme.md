@@ -1,11 +1,10 @@
 # Intro to Script ...
 
-$ chmod 775 script.sh
-$ cp script.sh {Nachos/code}
-$ cd {Nachos/code}
-$ sh script.sh {target}
-
-### Ex : sh script.sh HW2
+- $ chmod 775 script.sh
+- $ cp script.sh {Nachos/code}
+- $ cd {Nachos/code}
+- $ sh script.sh {target}
+- Ex : sh script.sh HW2
 
 # Note :
 
