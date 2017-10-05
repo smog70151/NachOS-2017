@@ -16,4 +16,17 @@
 
 - Please execute buildCheck.sh until no error occurs!!!
 
+- modify your bash_profile, and it will help you a lot.
+
+- (alias hw='sh script.sh')
+
+- (alias check='sh buildCheck.sh')
+
 - Happy Nachos ~ 
+
+
+## Update :
+
+- There is a new script for MP2.0 (script2.sh)
+
+- $ sh script2.sh {target1} {target2}
